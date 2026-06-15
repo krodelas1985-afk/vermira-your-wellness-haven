@@ -23,6 +23,7 @@ import { LeadForm } from "@/components/landing/LeadForm";
 import { FloatingMessenger } from "@/components/landing/FloatingMessenger";
 
 import heroImg from "@/assets/vermira/hero.jpg";
+import heroVideo from "@/assets/vermira/hero.mp4.asset.json";
 import overviewImg from "@/assets/vermira/overview.jpg";
 import clubhouseImg from "@/assets/vermira/clubhouse.jpg";
 import locationMapImg from "@/assets/vermira/location-map.png";
@@ -71,6 +72,13 @@ const UNITS = [
     baths: "2 T&B",
     features: ["Open Lanai", "Maid's Room / Utility", "Carport", "Integrated Solar Panels"],
     flagship: true,
+    sellingPrice: "₱7,519,124.18",
+    contractPrice: "₱8,872,566.53",
+    downPayment: "₱23,951.57 / mo × 36 mos",
+    balance: "₱7,985,309.88",
+    bank: "est. ₱56,438.51 / mo",
+    pagibig: "est. ₱36,943.02 / mo",
+    loanNote: "Loan difference of ₱1,985,309.88 if approved loan is ₱6M.",
   },
   {
     name: "Mireio",
@@ -81,6 +89,13 @@ const UNITS = [
     beds: "3 BR",
     baths: "2 T&B",
     features: ["2 Storeys", "Maid's Room / Utility", "Optional Carport", "Solar Panel System"],
+    sellingPrice: "₱5,912,795.43",
+    contractPrice: "₱6,977,098.61",
+    downPayment: "₱18,686.39 / mo × 36 mos",
+    balance: "₱6,279,388.75",
+    bank: "est. ₱44,381.41 / mo",
+    pagibig: "est. ₱36,943.75 / mo",
+    loanNote: "Loan difference of ₱279,388.75 if approved loan is ₱6M.",
   },
   {
     name: "Mirela",
@@ -91,17 +106,12 @@ const UNITS = [
     beds: "2 BR",
     baths: "2 T&B",
     features: ["Private Balcony", "Service Area", "2 Storeys", "Solar-Ready Roof"],
-  },
-  {
-    name: "Coming Soon",
-    type: "To be announced",
-    image: gallery3,
-    lotArea: "—",
-    floorArea: "—",
-    beds: "—",
-    baths: "—",
-    features: ["Details to be released by developer"],
-    placeholder: true,
+    sellingPrice: "₱4,167,580.62",
+    contractPrice: "₱4,917,745.13",
+    downPayment: "₱12,965.96 / mo × 36 mos",
+    balance: "₱4,425,970.62",
+    bank: "est. ₱31,281.84 / mo",
+    pagibig: "est. ₱27,251.46 / mo",
   },
 ];
 
@@ -188,12 +198,15 @@ function Nav() {
 function Hero() {
   return (
     <section id="top" className="relative min-h-[100svh] w-full overflow-hidden">
-      {/* Video placeholder — swap <img> for a <video> tag when drone footage is available */}
       <div className="absolute inset-0">
-        <img
-          src={heroImg}
-          alt="Aerial view of Vermira at the foot of Mt. Malarayat"
-          className="h-full w-full object-cover animate-slow-zoom"
+        <video
+          src={heroVideo.url}
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster={heroImg}
+          className="h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-primary/40 via-primary/30 to-primary/80" />
         <div className="absolute inset-0 bg-gradient-to-r from-primary/50 to-transparent" />
@@ -408,13 +421,40 @@ function UnitCard({ unit }: { unit: (typeof UNITS)[number] }) {
           ))}
         </ul>
 
-        <div className="mt-6 rounded-2xl bg-muted px-4 py-3">
-          <div className="text-[11px] uppercase tracking-wider text-muted-foreground">
-            Starting at
+        <div className="mt-6 space-y-3 rounded-2xl bg-muted px-4 py-4">
+          <div>
+            <div className="text-[10px] uppercase tracking-wider text-muted-foreground">
+              Selling Price
+            </div>
+            <div className="font-display text-xl text-primary">{unit.sellingPrice}</div>
           </div>
-          <div className="font-display text-lg text-primary">
-            ₱___ — contact for current promo
+          <div>
+            <div className="text-[10px] uppercase tracking-wider text-muted-foreground">
+              Total Contract Price
+            </div>
+            <div className="font-display text-2xl text-clay">{unit.contractPrice}</div>
           </div>
+          <div className="space-y-1.5 border-t border-border pt-3 text-xs">
+            <div className="flex justify-between gap-3">
+              <span className="text-muted-foreground">10% Down Payment</span>
+              <span className="font-medium text-foreground">{unit.downPayment}</span>
+            </div>
+            <div className="flex justify-between gap-3">
+              <span className="text-muted-foreground">90% Balance</span>
+              <span className="font-medium text-foreground">{unit.balance}</span>
+            </div>
+            <div className="flex justify-between gap-3">
+              <span className="text-muted-foreground">Bank (25 yrs)</span>
+              <span className="font-medium text-foreground">{unit.bank}</span>
+            </div>
+            <div className="flex justify-between gap-3">
+              <span className="text-muted-foreground">Pag-IBIG (30 yrs)</span>
+              <span className="font-medium text-foreground">{unit.pagibig}</span>
+            </div>
+          </div>
+          {unit.loanNote && (
+            <p className="pt-1 text-[10px] italic text-muted-foreground">{unit.loanNote}</p>
+          )}
         </div>
 
         <a
@@ -579,7 +619,7 @@ function LeadFormSection() {
           </div>
         </div>
         <div className="lg:col-span-7">
-          <LeadForm unitOptions={UNITS.filter((u) => !u.placeholder).map((u) => `${u.name} — ${u.type}`)} />
+          <LeadForm unitOptions={UNITS.map((u) => `${u.name} — ${u.type}`)} />
         </div>
       </div>
     </section>

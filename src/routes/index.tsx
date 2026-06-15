@@ -619,7 +619,7 @@ function LeadFormSection() {
           </div>
         </div>
         <div className="lg:col-span-7">
-          <LeadForm unitOptions={UNITS.filter((u) => !u.placeholder).map((u) => `${u.name} — ${u.type}`)} />
+          <LeadForm unitOptions={UNITS.map((u) => `${u.name} — ${u.type}`)} />
         </div>
       </div>
     </section>

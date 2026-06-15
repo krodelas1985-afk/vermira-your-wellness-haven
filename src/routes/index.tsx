@@ -18,7 +18,6 @@ import {
   Home,
   Bed,
   Bath,
-  Car,
 } from "lucide-react";
 import { LeadForm } from "@/components/landing/LeadForm";
 import { FloatingMessenger } from "@/components/landing/FloatingMessenger";

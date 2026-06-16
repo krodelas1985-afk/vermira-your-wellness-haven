@@ -523,56 +523,60 @@ function Location() {
     <section id="location" className="bg-secondary py-20 sm:py-32">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
-          <div>
-            <SectionLabel>Location & Accessibility</SectionLabel>
-            <h2 className="mt-4 text-balance text-4xl leading-[1.1] sm:text-5xl">
-              Everything <em className="italic text-clay">grows</em> in Lipa.
-            </h2>
-            <p className="mt-5 text-base text-muted-foreground">
-              Nestled near the foot of Mt. Malarayat along Lipa-Alaminos Road —
-              Km 89, Brgy. Talisay / Lumbang, Lipa City, Batangas.
-            </p>
-            <ul className="mt-8 space-y-3">
-              {bullets.map((b) => (
-                <li key={b} className="flex items-start gap-3 text-sm sm:text-base">
-                  <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-clay" />
-                  <span>{b}</span>
-                </li>
-              ))}
-            </ul>
-            <a
-              href="https://www.google.com/maps/search/?api=1&query=Vermira+Sales+Pavilion+Lipa-Alaminos+Road+Talisay+Lipa+Batangas"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-8 inline-flex h-11 items-center gap-2 rounded-full border border-primary/30 px-5 text-sm font-medium text-primary transition hover:bg-primary hover:text-primary-foreground"
-            >
-              Open in Google Maps
-              <ArrowRight className="h-4 w-4" />
-            </a>
-          </div>
+          <ScrollReveal>
+            <div>
+              <SectionLabel>Location & Accessibility</SectionLabel>
+              <h2 className="mt-4 text-balance text-4xl leading-[1.1] sm:text-5xl">
+                Everything <em className="italic text-clay">grows</em> in Lipa.
+              </h2>
+              <p className="mt-5 text-base text-muted-foreground">
+                Nestled near the foot of Mt. Malarayat along Lipa-Alaminos Road —
+                Km 89, Brgy. Talisay / Lumbang, Lipa City, Batangas.
+              </p>
+              <ul className="mt-8 space-y-3">
+                {bullets.map((b) => (
+                  <li key={b} className="flex items-start gap-3 text-sm sm:text-base">
+                    <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-clay" />
+                    <span>{b}</span>
+                  </li>
+                ))}
+              </ul>
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Vermira+Sales+Pavilion+Lipa-Alaminos+Road+Talisay+Lipa+Batangas"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-8 inline-flex h-11 items-center gap-2 rounded-full border border-primary/30 px-5 text-sm font-medium text-primary transition hover:bg-primary hover:text-primary-foreground"
+              >
+                Open in Google Maps
+                <ArrowRight className="h-4 w-4" />
+              </a>
+            </div>
+          </ScrollReveal>
 
           {/* Map embed placeholder */}
-          <div className="overflow-hidden rounded-3xl bg-card shadow-sm ring-1 ring-leaf/15">
-            <div className="relative aspect-[4/3]">
-              <img
-                src={locationMapImg}
-                alt="Map showing Vermira location near Mt. Malarayat in Lipa, Batangas"
-                className="absolute inset-0 h-full w-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />
-              <div className="absolute bottom-4 left-4 right-4 rounded-2xl bg-bone/95 p-4 backdrop-blur sm:bottom-6 sm:left-6 sm:right-auto sm:max-w-xs">
-                <div className="text-[11px] uppercase tracking-wider text-clay">
-                  Vermira Sales Pavilion
-                </div>
-                <div className="mt-1 text-sm text-foreground">
-                  Km 89, Lipa-Alaminos Road, Brgy. Talisay, Lipa City, Batangas
+          <ScrollReveal delay={150}>
+            <div className="overflow-hidden rounded-3xl bg-card shadow-sm ring-1 ring-leaf/15">
+              <div className="relative aspect-[4/3]">
+                <img
+                  src={locationMapImg}
+                  alt="Map showing Vermira location near Mt. Malarayat in Lipa, Batangas"
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />
+                <div className="absolute bottom-4 left-4 right-4 rounded-2xl bg-bone/95 p-4 backdrop-blur sm:bottom-6 sm:left-6 sm:right-auto sm:max-w-xs">
+                  <div className="text-[11px] uppercase tracking-wider text-clay">
+                    Vermira Sales Pavilion
+                  </div>
+                  <div className="mt-1 text-sm text-foreground">
+                    Km 89, Lipa-Alaminos Road, Brgy. Talisay, Lipa City, Batangas
+                  </div>
                 </div>
               </div>
+              <div className="px-4 py-3 text-center text-[11px] uppercase tracking-wider text-muted-foreground">
+                [ Map embed placeholder — swap for live Google Maps iframe ]
+              </div>
             </div>
-            <div className="px-4 py-3 text-center text-[11px] uppercase tracking-wider text-muted-foreground">
-              [ Map embed placeholder — swap for live Google Maps iframe ]
-            </div>
-          </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>

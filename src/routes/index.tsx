@@ -29,25 +29,24 @@ import { FloatingMessenger } from "@/components/landing/FloatingMessenger";
 import { ScrollReveal } from "@/components/landing/ScrollReveal";
 
 import heroImg from "@/assets/vermira/hero.jpg";
-import heroVideo from "@/assets/vermira/hero.mp4.asset.json";
 import clubhouseImg from "@/assets/vermira/clubhouse.jpg";
 import locationMapImg from "@/assets/vermira/location-map.png";
 import unitMiraImg from "@/assets/vermira/unit-mira.jpg";
 import unitMireioImg from "@/assets/vermira/unit-mireio.jpg";
 import unitMirelaImg from "@/assets/vermira/unit-mirela.jpg";
-import galleryLiving from "@/assets/vermira/interiors/gallery-living.png.asset.json";
-import galleryDining from "@/assets/vermira/interiors/gallery-dining.png.asset.json";
-import galleryBedroomSingle from "@/assets/vermira/interiors/gallery-bedroom-single.png.asset.json";
-import galleryMasterBedroom from "@/assets/vermira/interiors/gallery-master-bedroom.png.asset.json";
-import galleryKidsRoom from "@/assets/vermira/interiors/gallery-kids-room.png.asset.json";
-import galleryBathroom from "@/assets/vermira/interiors/gallery-bathroom.png.asset.json";
-import groundbreakingPhoto from "@/assets/vermira/interiors/groundbreaking.png.asset.json";
-import amenityJogging from "@/assets/vermira/amenities/jogging-path.jpg.asset.json";
-import amenityFitness from "@/assets/vermira/amenities/fitness-area.jpg.asset.json";
-import amenityCourt from "@/assets/vermira/amenities/multi-sport-court.jpg.asset.json";
-import amenityPool from "@/assets/vermira/amenities/swimming-pool.jpg.asset.json";
-import amenityClubhouse from "@/assets/vermira/amenities/clubhouse.jpg.asset.json";
-import amenityGate from "@/assets/vermira/amenities/gate-guardhouse.jpg.asset.json";
+import galleryLiving from "@/assets/vermira/interiors/gallery-living.png";
+import galleryDining from "@/assets/vermira/interiors/gallery-dining.png";
+import galleryBedroomSingle from "@/assets/vermira/interiors/gallery-bedroom-single.png";
+import galleryMasterBedroom from "@/assets/vermira/interiors/gallery-master-bedroom.png";
+import galleryKidsRoom from "@/assets/vermira/interiors/gallery-kids-room.png";
+import galleryBathroom from "@/assets/vermira/interiors/gallery-bathroom.png";
+import groundbreakingPhoto from "@/assets/vermira/interiors/groundbreaking.png";
+import amenityJogging from "@/assets/vermira/amenities/jogging-path.jpg";
+import amenityFitness from "@/assets/vermira/amenities/fitness-area.jpg";
+import amenityCourt from "@/assets/vermira/amenities/multi-sport-court.jpg";
+import amenityPool from "@/assets/vermira/amenities/swimming-pool.jpg";
+import amenityClubhouse from "@/assets/vermira/amenities/clubhouse.jpg";
+import amenityGate from "@/assets/vermira/amenities/gate-guardhouse.jpg";
 import agentJoyce from "@/assets/vermira/agent-joyce.jpg";
 
 export const Route = createFileRoute("/")({
@@ -132,37 +131,37 @@ const AMENITIES = [
     icon: Home,
     title: "Clubhouse",
     body: "A modern central clubhouse — the social heart of Vermira for gatherings, events, and everyday lounging.",
-    image: amenityClubhouse.url,
+    image: amenityClubhouse,
   },
   {
     icon: Waves,
     title: "Swimming Pool",
     body: "A resort-style pool framed by palms and lush landscaping — your everyday staycation.",
-    image: amenityPool.url,
+    image: amenityPool,
   },
   {
     icon: Trophy,
     title: "Multi-sport Court",
     body: "Basketball, volleyball, and futsal lines on one well-finished court right by the pool.",
-    image: amenityCourt.url,
+    image: amenityCourt,
   },
   {
     icon: Dumbbell,
     title: "Fitness Area",
     body: "Open-air fitness equipment set among trees — train outdoors in the Lipa breeze.",
-    image: amenityFitness.url,
+    image: amenityFitness,
   },
   {
     icon: Footprints,
     title: "Jogging Path",
     body: "A dedicated loop with a playground and rest stops — easy laps for the whole family.",
-    image: amenityJogging.url,
+    image: amenityJogging,
   },
   {
     icon: ShieldCheck,
     title: "Gate & Guardhouse",
     body: "A grand, secured main entrance with 24/7 guarded access into the community.",
-    image: amenityGate.url,
+    image: amenityGate,
   },
 ];
 
@@ -211,13 +210,9 @@ function Hero() {
   return (
     <section id="top" className="relative min-h-[100svh] w-full overflow-hidden">
       <div className="absolute inset-0">
-        <video
-          src={heroVideo.url}
-          autoPlay
-          muted
-          loop
-          playsInline
-          poster={heroImg}
+        <img
+          src={heroImg}
+          alt="Vermira at the foot of Mt. Malarayat"
           className="h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-primary/40 via-primary/30 to-primary/80" />
@@ -314,7 +309,7 @@ function Overview() {
         <ScrollReveal delay={150}>
           <div className="mt-16 grid gap-4 sm:grid-cols-2 sm:gap-6">
             <ImagePlaceholder
-              src={groundbreakingPhoto.url}
+              src={groundbreakingPhoto}
               alt="Keyland Corporation groundbreaking ceremony for the project"
               tall
             />
@@ -587,32 +582,32 @@ function Location() {
 function Gallery() {
   const items = [
     {
-      src: galleryLiving.url,
+      src: galleryLiving,
       alt: "Living area perspective with staircase and warm wood details",
       label: "Living Area",
     },
     {
-      src: galleryDining.url,
+      src: galleryDining,
       alt: "Dining and kitchen perspective with open-plan layout",
       label: "Dining & Kitchen",
     },
     {
-      src: galleryBedroomSingle.url,
+      src: galleryBedroomSingle,
       alt: "Secondary bedroom with study nook and large window",
       label: "Bedroom",
     },
     {
-      src: galleryMasterBedroom.url,
+      src: galleryMasterBedroom,
       alt: "Master bedroom with warm minimalist interiors",
       label: "Master Bedroom",
     },
     {
-      src: galleryKidsRoom.url,
+      src: galleryKidsRoom,
       alt: "Kids room with mural wall and playful styling",
       label: "Kids Room",
     },
     {
-      src: galleryBathroom.url,
+      src: galleryBathroom,
       alt: "Bathroom interior with glass shower and wood vanity",
       label: "Bathroom",
     },

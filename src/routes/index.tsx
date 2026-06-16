@@ -375,33 +375,39 @@ function Units() {
   return (
     <section id="units" className="bg-bone py-20 sm:py-32">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
-          <div className="max-w-2xl">
-            <SectionLabel>Units & Pricing</SectionLabel>
-            <h2 className="mt-4 text-balance text-4xl leading-[1.1] sm:text-5xl">
-              Homes that bring the <em className="italic text-clay">outdoors in</em>.
-            </h2>
+        <ScrollReveal>
+          <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+            <div className="max-w-2xl">
+              <SectionLabel>Units & Pricing</SectionLabel>
+              <h2 className="mt-4 text-balance text-4xl leading-[1.1] sm:text-5xl">
+                Homes that bring the <em className="italic text-clay">outdoors in</em>.
+              </h2>
+            </div>
+            <p className="max-w-sm text-sm text-muted-foreground">
+              All models feature integrated solar, protected entrances, large windows for
+              natural light, and provision for a 2-car garage.
+            </p>
           </div>
-          <p className="max-w-sm text-sm text-muted-foreground">
-            All models feature integrated solar, protected entrances, large windows for
-            natural light, and provision for a 2-car garage.
-          </p>
-        </div>
+        </ScrollReveal>
 
         <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {UNITS.map((u) => (
-            <UnitCard key={u.name} unit={u} />
+          {UNITS.map((u, idx) => (
+            <ScrollReveal key={u.name} delay={idx * 120}>
+              <UnitCard unit={u} />
+            </ScrollReveal>
           ))}
         </div>
 
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-3 text-center">
-          <Badge variant="outline" className="rounded-full border-leaf/40 bg-card px-4 py-2 text-xs font-medium text-primary">
-            ✓ Pag-IBIG Financing Available
-          </Badge>
-          <Badge variant="outline" className="rounded-full border-leaf/40 bg-card px-4 py-2 text-xs font-medium text-primary">
-            ✓ Bank Financing Available
-          </Badge>
-        </div>
+        <ScrollReveal delay={200}>
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-3 text-center">
+            <Badge variant="outline" className="rounded-full border-leaf/40 bg-card px-4 py-2 text-xs font-medium text-primary">
+              ✓ Pag-IBIG Financing Available
+            </Badge>
+            <Badge variant="outline" className="rounded-full border-leaf/40 bg-card px-4 py-2 text-xs font-medium text-primary">
+              ✓ Bank Financing Available
+            </Badge>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );

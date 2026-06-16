@@ -29,18 +29,18 @@ import { FloatingMessenger } from "@/components/landing/FloatingMessenger";
 
 import heroImg from "@/assets/vermira/hero.jpg";
 import heroVideo from "@/assets/vermira/hero.mp4.asset.json";
-import overviewImg from "@/assets/vermira/overview.jpg";
 import clubhouseImg from "@/assets/vermira/clubhouse.jpg";
 import locationMapImg from "@/assets/vermira/location-map.png";
 import unitMiraImg from "@/assets/vermira/unit-mira.jpg";
 import unitMireioImg from "@/assets/vermira/unit-mireio.jpg";
 import unitMirelaImg from "@/assets/vermira/unit-mirela.jpg";
-import gallery1 from "@/assets/vermira/gallery-1.jpg";
-import gallery2 from "@/assets/vermira/gallery-2.jpg";
-import gallery3 from "@/assets/vermira/gallery-3.jpg";
-import gallery4 from "@/assets/vermira/gallery-4.jpg";
-import gallery5 from "@/assets/vermira/gallery-5.jpg";
-import gallery6 from "@/assets/vermira/gallery-6.jpg";
+import galleryLiving from "@/assets/vermira/interiors/gallery-living.png.asset.json";
+import galleryDining from "@/assets/vermira/interiors/gallery-dining.png.asset.json";
+import galleryBedroomSingle from "@/assets/vermira/interiors/gallery-bedroom-single.png.asset.json";
+import galleryMasterBedroom from "@/assets/vermira/interiors/gallery-master-bedroom.png.asset.json";
+import galleryKidsRoom from "@/assets/vermira/interiors/gallery-kids-room.png.asset.json";
+import galleryBathroom from "@/assets/vermira/interiors/gallery-bathroom.png.asset.json";
+import groundbreakingPhoto from "@/assets/vermira/interiors/groundbreaking.png.asset.json";
 import amenityJogging from "@/assets/vermira/amenities/jogging-path.jpg.asset.json";
 import amenityFitness from "@/assets/vermira/amenities/fitness-area.jpg.asset.json";
 import amenityCourt from "@/assets/vermira/amenities/multi-sport-court.jpg.asset.json";
@@ -309,7 +309,11 @@ function Overview() {
         </div>
 
         <div className="mt-16 grid gap-4 sm:grid-cols-2 sm:gap-6">
-          <ImagePlaceholder src={overviewImg} alt="Architect's perspective of Vermira layout" tall />
+          <ImagePlaceholder
+            src={groundbreakingPhoto.url}
+            alt="Keyland Corporation groundbreaking ceremony for the project"
+            tall
+          />
           <ImagePlaceholder src={clubhouseImg} alt="Central clubhouse architect's perspective" tall />
         </div>
       </div>

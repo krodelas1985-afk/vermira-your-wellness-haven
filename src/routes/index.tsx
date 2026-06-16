@@ -331,36 +331,37 @@ function Amenities() {
   return (
     <section id="amenities" className="bg-primary py-20 text-primary-foreground sm:py-32">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        <div className="max-w-2xl">
-          <SectionLabel className="text-moss">Amenities & Features</SectionLabel>
-          <h2 className="mt-4 text-balance text-4xl leading-[1.1] sm:text-5xl">
-            Designed for life <em className="italic text-moss">outdoors</em>, indoors.
-          </h2>
-        </div>
+        <ScrollReveal>
+          <div className="max-w-2xl">
+            <SectionLabel className="text-moss">Amenities & Features</SectionLabel>
+            <h2 className="mt-4 text-balance text-4xl leading-[1.1] sm:text-5xl">
+              Designed for life <em className="italic text-moss">outdoors</em>, indoors.
+            </h2>
+          </div>
+        </ScrollReveal>
 
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {AMENITIES.map((a) => {
+          {AMENITIES.map((a, idx) => {
             const Icon = a.icon;
             return (
-              <article
-                key={a.title}
-                className="group overflow-hidden rounded-3xl bg-bone/5 ring-1 ring-white/10 transition hover:bg-bone/10"
-              >
-                <div className="relative aspect-[5/3] overflow-hidden">
-                  <img
-                    src={a.image}
-                    alt={a.title}
-                    className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute left-4 top-4 flex h-11 w-11 items-center justify-center rounded-full bg-clay text-white shadow-lg">
-                    <Icon className="h-5 w-5" strokeWidth={2} />
+              <ScrollReveal key={a.title} delay={idx * 100}>
+                <article className="group overflow-hidden rounded-3xl bg-bone/5 ring-1 ring-white/10 transition hover:bg-bone/10">
+                  <div className="relative aspect-[5/3] overflow-hidden">
+                    <img
+                      src={a.image}
+                      alt={a.title}
+                      className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                    />
+                    <div className="absolute left-4 top-4 flex h-11 w-11 items-center justify-center rounded-full bg-clay text-white shadow-lg">
+                      <Icon className="h-5 w-5" strokeWidth={2} />
+                    </div>
                   </div>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-2xl text-bone">{a.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-bone/70">{a.body}</p>
-                </div>
-              </article>
+                  <div className="p-6">
+                    <h3 className="text-2xl text-bone">{a.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-bone/70">{a.body}</p>
+                  </div>
+                </article>
+              </ScrollReveal>
             );
           })}
         </div>

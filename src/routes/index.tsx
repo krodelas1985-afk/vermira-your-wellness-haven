@@ -636,19 +636,19 @@ function Gallery() {
         <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 sm:gap-6">
           {items.map((item, idx) => (
             <ScrollReveal key={item.label} delay={idx * 100}>
-              <figure
-                className="group overflow-hidden rounded-2xl bg-muted ring-1 ring-border/60"
-              <div className="aspect-[4/3] overflow-hidden">
-                <img
-                  src={item.src}
-                  alt={item.alt}
-                  className="h-full w-full object-cover transition duration-700 group-hover:scale-[1.03]"
-                />
-              </div>
-              <figcaption className="border-t border-border/80 px-4 py-3 text-sm text-muted-foreground">
-                {item.label}
-              </figcaption>
-            </figure>
+              <figure className="group overflow-hidden rounded-2xl bg-muted ring-1 ring-border/60">
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img
+                    src={item.src}
+                    alt={item.alt}
+                    className="h-full w-full object-cover transition duration-700 group-hover:scale-[1.03]"
+                  />
+                </div>
+                <figcaption className="border-t border-border/80 px-4 py-3 text-sm text-muted-foreground">
+                  {item.label}
+                </figcaption>
+              </figure>
+            </ScrollReveal>
           ))}
         </div>
       </div>

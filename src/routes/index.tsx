@@ -18,6 +18,11 @@ import {
   Home,
   Bed,
   Bath,
+  Footprints,
+  Dumbbell,
+  Trophy,
+  Waves,
+  ShieldCheck,
 } from "lucide-react";
 import { LeadForm } from "@/components/landing/LeadForm";
 import { FloatingMessenger } from "@/components/landing/FloatingMessenger";

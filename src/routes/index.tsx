@@ -29,18 +29,18 @@ import { FloatingMessenger } from "@/components/landing/FloatingMessenger";
 
 import heroImg from "@/assets/vermira/hero.jpg";
 import heroVideo from "@/assets/vermira/hero.mp4.asset.json";
-import overviewImg from "@/assets/vermira/overview.jpg";
 import clubhouseImg from "@/assets/vermira/clubhouse.jpg";
 import locationMapImg from "@/assets/vermira/location-map.png";
 import unitMiraImg from "@/assets/vermira/unit-mira.jpg";
 import unitMireioImg from "@/assets/vermira/unit-mireio.jpg";
 import unitMirelaImg from "@/assets/vermira/unit-mirela.jpg";
-import gallery1 from "@/assets/vermira/gallery-1.jpg";
-import gallery2 from "@/assets/vermira/gallery-2.jpg";
-import gallery3 from "@/assets/vermira/gallery-3.jpg";
-import gallery4 from "@/assets/vermira/gallery-4.jpg";
-import gallery5 from "@/assets/vermira/gallery-5.jpg";
-import gallery6 from "@/assets/vermira/gallery-6.jpg";
+import galleryLiving from "@/assets/vermira/interiors/gallery-living.png.asset.json";
+import galleryDining from "@/assets/vermira/interiors/gallery-dining.png.asset.json";
+import galleryBedroomSingle from "@/assets/vermira/interiors/gallery-bedroom-single.png.asset.json";
+import galleryMasterBedroom from "@/assets/vermira/interiors/gallery-master-bedroom.png.asset.json";
+import galleryKidsRoom from "@/assets/vermira/interiors/gallery-kids-room.png.asset.json";
+import galleryBathroom from "@/assets/vermira/interiors/gallery-bathroom.png.asset.json";
+import groundbreakingPhoto from "@/assets/vermira/interiors/groundbreaking.png.asset.json";
 import amenityJogging from "@/assets/vermira/amenities/jogging-path.jpg.asset.json";
 import amenityFitness from "@/assets/vermira/amenities/fitness-area.jpg.asset.json";
 import amenityCourt from "@/assets/vermira/amenities/multi-sport-court.jpg.asset.json";
@@ -309,7 +309,11 @@ function Overview() {
         </div>
 
         <div className="mt-16 grid gap-4 sm:grid-cols-2 sm:gap-6">
-          <ImagePlaceholder src={overviewImg} alt="Architect's perspective of Vermira layout" tall />
+          <ImagePlaceholder
+            src={groundbreakingPhoto.url}
+            alt="Keyland Corporation groundbreaking ceremony for the project"
+            tall
+          />
           <ImagePlaceholder src={clubhouseImg} alt="Central clubhouse architect's perspective" tall />
         </div>
       </div>
@@ -565,18 +569,42 @@ function Location() {
 
 /* ---------------- Gallery ---------------- */
 function Gallery() {
-  const tiles = [
-    { src: gallery1, span: "sm:col-span-2 sm:row-span-2" },
-    { src: gallery2, span: "" },
-    { src: gallery3, span: "" },
-    { src: gallery4, span: "" },
-    { src: gallery5, span: "sm:col-span-2" },
-    { src: gallery6, span: "" },
+  const items = [
+    {
+      src: galleryLiving.url,
+      alt: "Living area perspective with staircase and warm wood details",
+      label: "Living Area",
+    },
+    {
+      src: galleryDining.url,
+      alt: "Dining and kitchen perspective with open-plan layout",
+      label: "Dining & Kitchen",
+    },
+    {
+      src: galleryBedroomSingle.url,
+      alt: "Secondary bedroom with study nook and large window",
+      label: "Bedroom",
+    },
+    {
+      src: galleryMasterBedroom.url,
+      alt: "Master bedroom with warm minimalist interiors",
+      label: "Master Bedroom",
+    },
+    {
+      src: galleryKidsRoom.url,
+      alt: "Kids room with mural wall and playful styling",
+      label: "Kids Room",
+    },
+    {
+      src: galleryBathroom.url,
+      alt: "Bathroom interior with glass shower and wood vanity",
+      label: "Bathroom",
+    },
   ];
   return (
     <section id="gallery" className="bg-bone py-20 sm:py-32">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between animate-fade-up-soft">
           <div>
             <SectionLabel>Gallery</SectionLabel>
             <h2 className="mt-4 text-balance text-4xl leading-[1.1] sm:text-5xl">
@@ -584,26 +612,29 @@ function Gallery() {
             </h2>
           </div>
           <p className="max-w-sm text-sm text-muted-foreground">
-            Renders, drone stills, and lifestyle moments from inside the community.
+            Interior perspectives and lifestyle-ready spaces from the Vermira home collection.
           </p>
         </div>
-        <div className="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
-          {tiles.map((t, i) => (
-            <div
-              key={i}
-              className={`group relative aspect-square overflow-hidden rounded-2xl bg-muted ${t.span}`}
+        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 sm:gap-6">
+          {items.map((item, idx) => (
+            <figure
+              key={item.label}
+              className="group overflow-hidden rounded-2xl bg-muted ring-1 ring-border/60 animate-fade-up-soft"
+              style={{ animationDelay: `${idx * 90}ms` }}
             >
-              <img
-                src={t.src}
-                alt={`Vermira gallery ${i + 1}`}
-                className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
-              />
-            </div>
+              <div className="aspect-[4/3] overflow-hidden">
+                <img
+                  src={item.src}
+                  alt={item.alt}
+                  className="h-full w-full object-cover transition duration-700 group-hover:scale-[1.03]"
+                />
+              </div>
+              <figcaption className="border-t border-border/80 px-4 py-3 text-sm text-muted-foreground">
+                {item.label}
+              </figcaption>
+            </figure>
           ))}
         </div>
-        <p className="mt-4 text-center text-[11px] uppercase tracking-wider text-muted-foreground">
-          [ Image placeholders — swap with your own renders / drone shots ]
-        </p>
       </div>
     </section>
   );
@@ -770,8 +801,14 @@ function SectionLabel({ children, className = "" }: { children: React.ReactNode;
 
 function ImagePlaceholder({ src, alt, tall }: { src: string; alt: string; tall?: boolean }) {
   return (
-    <div className={`overflow-hidden rounded-3xl bg-muted ${tall ? "aspect-[4/3]" : "aspect-square"}`}>
-      <img src={src} alt={alt} className="h-full w-full object-cover" />
+    <div
+      className={`overflow-hidden rounded-3xl bg-muted animate-fade-up-soft ${tall ? "aspect-[4/3]" : "aspect-square"}`}
+    >
+      <img
+        src={src}
+        alt={alt}
+        className="h-full w-full object-cover transition duration-700 hover:scale-[1.02]"
+      />
     </div>
   );
 }

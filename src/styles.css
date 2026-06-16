@@ -111,3 +111,25 @@
 @utility animate-float {
   animation: float-y 3s ease-in-out infinite;
 }
+
+@keyframes fade-up-soft {
+  0% {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@utility animate-fade-up-soft {
+  animation: fade-up-soft 0.8s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-slow-zoom,
+  .animate-float,
+  .animate-fade-up-soft {
+    animation: none !important;
+  }
+}

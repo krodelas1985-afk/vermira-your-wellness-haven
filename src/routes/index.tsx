@@ -661,24 +661,26 @@ function LeadFormSection() {
   return (
     <section id="inquire" className="relative bg-primary py-20 text-primary-foreground sm:py-32">
       <div className="mx-auto grid max-w-7xl gap-12 px-5 sm:px-8 lg:grid-cols-12 lg:gap-16">
-        <div className="lg:col-span-5">
-          <SectionLabel className="text-moss">Inquire</SectionLabel>
-          <h2 className="mt-4 text-balance text-4xl leading-[1.1] sm:text-5xl">
-            Tara, magpa-tour <em className="italic text-moss">tayo</em>.
-          </h2>
-          <p className="mt-5 text-base leading-relaxed text-bone/80">
-            Tell us what you're looking for and we'll send pricing, current promos,
-            and tour availability — usually within one business day.
-          </p>
-          <div className="mt-8 space-y-3 text-sm text-bone/80">
-            <p className="flex items-center gap-3"><Phone className="h-4 w-4 text-moss" /> +63 927 676 6785</p>
-            <p className="flex items-center gap-3"><Mail className="h-4 w-4 text-moss" /> joycecuenca002@gmail.com</p>
-            <p className="flex items-center gap-3"><MapPin className="h-4 w-4 text-moss" /> Vermira Sales Pavilion, Lipa City</p>
+        <ScrollReveal className="lg:col-span-5">
+          <div>
+            <SectionLabel className="text-moss">Inquire</SectionLabel>
+            <h2 className="mt-4 text-balance text-4xl leading-[1.1] sm:text-5xl">
+              Tara, magpa-tour <em className="italic text-moss">tayo</em>.
+            </h2>
+            <p className="mt-5 text-base leading-relaxed text-bone/80">
+              Tell us what you're looking for and we'll send pricing, current promos,
+              and tour availability — usually within one business day.
+            </p>
+            <div className="mt-8 space-y-3 text-sm text-bone/80">
+              <p className="flex items-center gap-3"><Phone className="h-4 w-4 text-moss" /> +63 927 676 6785</p>
+              <p className="flex items-center gap-3"><Mail className="h-4 w-4 text-moss" /> joycecuenca002@gmail.com</p>
+              <p className="flex items-center gap-3"><MapPin className="h-4 w-4 text-moss" /> Vermira Sales Pavilion, Lipa City</p>
+            </div>
           </div>
-        </div>
-        <div className="lg:col-span-7">
+        </ScrollReveal>
+        <ScrollReveal className="lg:col-span-7" delay={150}>
           <LeadForm unitOptions={UNITS.map((u) => `${u.name} — ${u.type}`)} />
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );

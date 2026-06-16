@@ -620,24 +620,24 @@ function Gallery() {
   return (
     <section id="gallery" className="bg-bone py-20 sm:py-32">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between animate-fade-up-soft">
-          <div>
-            <SectionLabel>Gallery</SectionLabel>
-            <h2 className="mt-4 text-balance text-4xl leading-[1.1] sm:text-5xl">
-              Lifestyle, <em className="italic text-clay">framed</em>.
-            </h2>
+        <ScrollReveal>
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <SectionLabel>Gallery</SectionLabel>
+              <h2 className="mt-4 text-balance text-4xl leading-[1.1] sm:text-5xl">
+                Lifestyle, <em className="italic text-clay">framed</em>.
+              </h2>
+            </div>
+            <p className="max-w-sm text-sm text-muted-foreground">
+              Interior perspectives and lifestyle-ready spaces from the Vermira home collection.
+            </p>
           </div>
-          <p className="max-w-sm text-sm text-muted-foreground">
-            Interior perspectives and lifestyle-ready spaces from the Vermira home collection.
-          </p>
-        </div>
+        </ScrollReveal>
         <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 sm:gap-6">
           {items.map((item, idx) => (
-            <figure
-              key={item.label}
-              className="group overflow-hidden rounded-2xl bg-muted ring-1 ring-border/60 animate-fade-up-soft"
-              style={{ animationDelay: `${idx * 90}ms` }}
-            >
+            <ScrollReveal key={item.label} delay={idx * 100}>
+              <figure
+                className="group overflow-hidden rounded-2xl bg-muted ring-1 ring-border/60"
               <div className="aspect-[4/3] overflow-hidden">
                 <img
                   src={item.src}

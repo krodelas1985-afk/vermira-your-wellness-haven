@@ -278,45 +278,49 @@ function Overview() {
   return (
     <section id="overview" className="relative bg-bone py-20 sm:py-32">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        <div className="grid items-start gap-14 lg:grid-cols-12">
-          <div className="lg:col-span-5">
-            <SectionLabel>The Vision</SectionLabel>
-            <h2 className="mt-4 text-balance text-4xl leading-[1.1] sm:text-5xl">
-              A wellness community built around <em className="italic text-clay">verdant fields</em>, not four walls.
-            </h2>
-          </div>
-          <div className="lg:col-span-7">
-            <p className="text-lg leading-relaxed text-muted-foreground">
-              <em className="not-italic font-medium text-foreground">[ver]</em> verdant ·{" "}
-              <em className="not-italic font-medium text-foreground">[mira]</em> to see.
-              Vermira's clustered layout weaves themed pocket parks, botanical gardens, and
-              shared green spaces through every neighborhood — with a commercial center
-              fronting the property and a partnership with the World Wildlife Fund guiding
-              how the community grows.
-            </p>
-            <div className="mt-10 grid grid-cols-2 gap-px overflow-hidden rounded-2xl bg-leaf/15 sm:grid-cols-4">
-              {facts.map((f) => (
-                <div key={f.label} className="bg-bone p-5 sm:p-6">
-                  <div className="text-xs uppercase tracking-wider text-muted-foreground">
-                    {f.label}
+        <ScrollReveal>
+          <div className="grid items-start gap-14 lg:grid-cols-12">
+            <div className="lg:col-span-5">
+              <SectionLabel>The Vision</SectionLabel>
+              <h2 className="mt-4 text-balance text-4xl leading-[1.1] sm:text-5xl">
+                A wellness community built around <em className="italic text-clay">verdant fields</em>, not four walls.
+              </h2>
+            </div>
+            <div className="lg:col-span-7">
+              <p className="text-lg leading-relaxed text-muted-foreground">
+                <em className="not-italic font-medium text-foreground">[ver]</em> verdant ·{" "}
+                <em className="not-italic font-medium text-foreground">[mira]</em> to see.
+                Vermira's clustered layout weaves themed pocket parks, botanical gardens, and
+                shared green spaces through every neighborhood — with a commercial center
+                fronting the property and a partnership with the World Wildlife Fund guiding
+                how the community grows.
+              </p>
+              <div className="mt-10 grid grid-cols-2 gap-px overflow-hidden rounded-2xl bg-leaf/15 sm:grid-cols-4">
+                {facts.map((f) => (
+                  <div key={f.label} className="bg-bone p-5 sm:p-6">
+                    <div className="text-xs uppercase tracking-wider text-muted-foreground">
+                      {f.label}
+                    </div>
+                    <div className="mt-2 font-display text-xl text-primary sm:text-2xl">
+                      {f.value}
+                    </div>
                   </div>
-                  <div className="mt-2 font-display text-xl text-primary sm:text-2xl">
-                    {f.value}
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
-        </div>
+        </ScrollReveal>
 
-        <div className="mt-16 grid gap-4 sm:grid-cols-2 sm:gap-6">
-          <ImagePlaceholder
-            src={groundbreakingPhoto.url}
-            alt="Keyland Corporation groundbreaking ceremony for the project"
-            tall
-          />
-          <ImagePlaceholder src={clubhouseImg} alt="Central clubhouse architect's perspective" tall />
-        </div>
+        <ScrollReveal delay={150}>
+          <div className="mt-16 grid gap-4 sm:grid-cols-2 sm:gap-6">
+            <ImagePlaceholder
+              src={groundbreakingPhoto.url}
+              alt="Keyland Corporation groundbreaking ceremony for the project"
+              tall
+            />
+            <ImagePlaceholder src={clubhouseImg} alt="Central clubhouse architect's perspective" tall />
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );

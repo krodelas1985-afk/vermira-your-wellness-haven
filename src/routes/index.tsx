@@ -18,6 +18,11 @@ import {
   Home,
   Bed,
   Bath,
+  Footprints,
+  Dumbbell,
+  Trophy,
+  Waves,
+  ShieldCheck,
 } from "lucide-react";
 import { LeadForm } from "@/components/landing/LeadForm";
 import { FloatingMessenger } from "@/components/landing/FloatingMessenger";
@@ -36,6 +41,12 @@ import gallery3 from "@/assets/vermira/gallery-3.jpg";
 import gallery4 from "@/assets/vermira/gallery-4.jpg";
 import gallery5 from "@/assets/vermira/gallery-5.jpg";
 import gallery6 from "@/assets/vermira/gallery-6.jpg";
+import amenityJogging from "@/assets/vermira/amenities/jogging-path.jpg.asset.json";
+import amenityFitness from "@/assets/vermira/amenities/fitness-area.jpg.asset.json";
+import amenityCourt from "@/assets/vermira/amenities/multi-sport-court.jpg.asset.json";
+import amenityPool from "@/assets/vermira/amenities/swimming-pool.jpg.asset.json";
+import amenityClubhouse from "@/assets/vermira/amenities/clubhouse.jpg.asset.json";
+import amenityGate from "@/assets/vermira/amenities/gate-guardhouse.jpg.asset.json";
 import agentJoyce from "@/assets/vermira/agent-joyce.jpg";
 
 export const Route = createFileRoute("/")({
@@ -117,40 +128,40 @@ const UNITS = [
 
 const AMENITIES = [
   {
-    icon: Trees,
-    title: "22 Themed Pocket Parks",
-    body: "Scattered across the development so every cluster has its own green pause.",
-    image: gallery1,
+    icon: Home,
+    title: "Clubhouse",
+    body: "A modern central clubhouse — the social heart of Vermira for gatherings, events, and everyday lounging.",
+    image: amenityClubhouse.url,
   },
   {
-    icon: Leaf,
-    title: "Botanical Open Spaces",
-    body: "Landscaped shared areas and a commitment to 1,500 trees — one tree per home.",
-    image: gallery2,
+    icon: Waves,
+    title: "Swimming Pool",
+    body: "A resort-style pool framed by palms and lush landscaping — your everyday staycation.",
+    image: amenityPool.url,
   },
   {
-    icon: ShoppingBag,
-    title: "Commercial Center In Front",
-    body: "Essentials, cafés, and services right at the property's frontage.",
-    image: gallery4,
+    icon: Trophy,
+    title: "Multi-sport Court",
+    body: "Basketball, volleyball, and futsal lines on one well-finished court right by the pool.",
+    image: amenityCourt.url,
   },
   {
-    icon: Flag,
-    title: "300m to Mt. Malarayat Golf",
-    body: "Tee off in minutes. The country club is practically next door.",
-    image: gallery5,
+    icon: Dumbbell,
+    title: "Fitness Area",
+    body: "Open-air fitness equipment set among trees — train outdoors in the Lipa breeze.",
+    image: amenityFitness.url,
   },
   {
-    icon: Sun,
-    title: "Solar-Powered Homes",
-    body: "Every unit ships with an integrated rooftop solar system from day one.",
-    image: gallery6,
+    icon: Footprints,
+    title: "Jogging Path",
+    body: "A dedicated loop with a playground and rest stops — easy laps for the whole family.",
+    image: amenityJogging.url,
   },
   {
-    icon: Award,
-    title: "EDGE Advanced Certified",
-    body: "Built to IFC's EDGE sustainability standard — cooler roofs, smarter water use.",
-    image: overviewImg,
+    icon: ShieldCheck,
+    title: "Gate & Guardhouse",
+    body: "A grand, secured main entrance with 24/7 guarded access into the community.",
+    image: amenityGate.url,
   },
 ];
 

@@ -26,6 +26,7 @@ import {
 } from "lucide-react";
 import { LeadForm } from "@/components/landing/LeadForm";
 import { FloatingMessenger } from "@/components/landing/FloatingMessenger";
+import { ScrollReveal } from "@/components/landing/ScrollReveal";
 
 import heroImg from "@/assets/vermira/hero.jpg";
 import heroVideo from "@/assets/vermira/hero.mp4.asset.json";
@@ -277,45 +278,49 @@ function Overview() {
   return (
     <section id="overview" className="relative bg-bone py-20 sm:py-32">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        <div className="grid items-start gap-14 lg:grid-cols-12">
-          <div className="lg:col-span-5">
-            <SectionLabel>The Vision</SectionLabel>
-            <h2 className="mt-4 text-balance text-4xl leading-[1.1] sm:text-5xl">
-              A wellness community built around <em className="italic text-clay">verdant fields</em>, not four walls.
-            </h2>
-          </div>
-          <div className="lg:col-span-7">
-            <p className="text-lg leading-relaxed text-muted-foreground">
-              <em className="not-italic font-medium text-foreground">[ver]</em> verdant ·{" "}
-              <em className="not-italic font-medium text-foreground">[mira]</em> to see.
-              Vermira's clustered layout weaves themed pocket parks, botanical gardens, and
-              shared green spaces through every neighborhood — with a commercial center
-              fronting the property and a partnership with the World Wildlife Fund guiding
-              how the community grows.
-            </p>
-            <div className="mt-10 grid grid-cols-2 gap-px overflow-hidden rounded-2xl bg-leaf/15 sm:grid-cols-4">
-              {facts.map((f) => (
-                <div key={f.label} className="bg-bone p-5 sm:p-6">
-                  <div className="text-xs uppercase tracking-wider text-muted-foreground">
-                    {f.label}
+        <ScrollReveal>
+          <div className="grid items-start gap-14 lg:grid-cols-12">
+            <div className="lg:col-span-5">
+              <SectionLabel>The Vision</SectionLabel>
+              <h2 className="mt-4 text-balance text-4xl leading-[1.1] sm:text-5xl">
+                A wellness community built around <em className="italic text-clay">verdant fields</em>, not four walls.
+              </h2>
+            </div>
+            <div className="lg:col-span-7">
+              <p className="text-lg leading-relaxed text-muted-foreground">
+                <em className="not-italic font-medium text-foreground">[ver]</em> verdant ·{" "}
+                <em className="not-italic font-medium text-foreground">[mira]</em> to see.
+                Vermira's clustered layout weaves themed pocket parks, botanical gardens, and
+                shared green spaces through every neighborhood — with a commercial center
+                fronting the property and a partnership with the World Wildlife Fund guiding
+                how the community grows.
+              </p>
+              <div className="mt-10 grid grid-cols-2 gap-px overflow-hidden rounded-2xl bg-leaf/15 sm:grid-cols-4">
+                {facts.map((f) => (
+                  <div key={f.label} className="bg-bone p-5 sm:p-6">
+                    <div className="text-xs uppercase tracking-wider text-muted-foreground">
+                      {f.label}
+                    </div>
+                    <div className="mt-2 font-display text-xl text-primary sm:text-2xl">
+                      {f.value}
+                    </div>
                   </div>
-                  <div className="mt-2 font-display text-xl text-primary sm:text-2xl">
-                    {f.value}
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
-        </div>
+        </ScrollReveal>
 
-        <div className="mt-16 grid gap-4 sm:grid-cols-2 sm:gap-6">
-          <ImagePlaceholder
-            src={groundbreakingPhoto.url}
-            alt="Keyland Corporation groundbreaking ceremony for the project"
-            tall
-          />
-          <ImagePlaceholder src={clubhouseImg} alt="Central clubhouse architect's perspective" tall />
-        </div>
+        <ScrollReveal delay={150}>
+          <div className="mt-16 grid gap-4 sm:grid-cols-2 sm:gap-6">
+            <ImagePlaceholder
+              src={groundbreakingPhoto.url}
+              alt="Keyland Corporation groundbreaking ceremony for the project"
+              tall
+            />
+            <ImagePlaceholder src={clubhouseImg} alt="Central clubhouse architect's perspective" tall />
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );
@@ -326,36 +331,37 @@ function Amenities() {
   return (
     <section id="amenities" className="bg-primary py-20 text-primary-foreground sm:py-32">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        <div className="max-w-2xl">
-          <SectionLabel className="text-moss">Amenities & Features</SectionLabel>
-          <h2 className="mt-4 text-balance text-4xl leading-[1.1] sm:text-5xl">
-            Designed for life <em className="italic text-moss">outdoors</em>, indoors.
-          </h2>
-        </div>
+        <ScrollReveal>
+          <div className="max-w-2xl">
+            <SectionLabel className="text-moss">Amenities & Features</SectionLabel>
+            <h2 className="mt-4 text-balance text-4xl leading-[1.1] sm:text-5xl">
+              Designed for life <em className="italic text-moss">outdoors</em>, indoors.
+            </h2>
+          </div>
+        </ScrollReveal>
 
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {AMENITIES.map((a) => {
+          {AMENITIES.map((a, idx) => {
             const Icon = a.icon;
             return (
-              <article
-                key={a.title}
-                className="group overflow-hidden rounded-3xl bg-bone/5 ring-1 ring-white/10 transition hover:bg-bone/10"
-              >
-                <div className="relative aspect-[5/3] overflow-hidden">
-                  <img
-                    src={a.image}
-                    alt={a.title}
-                    className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute left-4 top-4 flex h-11 w-11 items-center justify-center rounded-full bg-clay text-white shadow-lg">
-                    <Icon className="h-5 w-5" strokeWidth={2} />
+              <ScrollReveal key={a.title} delay={idx * 100}>
+                <article className="group overflow-hidden rounded-3xl bg-bone/5 ring-1 ring-white/10 transition hover:bg-bone/10">
+                  <div className="relative aspect-[5/3] overflow-hidden">
+                    <img
+                      src={a.image}
+                      alt={a.title}
+                      className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                    />
+                    <div className="absolute left-4 top-4 flex h-11 w-11 items-center justify-center rounded-full bg-clay text-white shadow-lg">
+                      <Icon className="h-5 w-5" strokeWidth={2} />
+                    </div>
                   </div>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-2xl text-bone">{a.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-bone/70">{a.body}</p>
-                </div>
-              </article>
+                  <div className="p-6">
+                    <h3 className="text-2xl text-bone">{a.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-bone/70">{a.body}</p>
+                  </div>
+                </article>
+              </ScrollReveal>
             );
           })}
         </div>
@@ -369,33 +375,39 @@ function Units() {
   return (
     <section id="units" className="bg-bone py-20 sm:py-32">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
-          <div className="max-w-2xl">
-            <SectionLabel>Units & Pricing</SectionLabel>
-            <h2 className="mt-4 text-balance text-4xl leading-[1.1] sm:text-5xl">
-              Homes that bring the <em className="italic text-clay">outdoors in</em>.
-            </h2>
+        <ScrollReveal>
+          <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+            <div className="max-w-2xl">
+              <SectionLabel>Units & Pricing</SectionLabel>
+              <h2 className="mt-4 text-balance text-4xl leading-[1.1] sm:text-5xl">
+                Homes that bring the <em className="italic text-clay">outdoors in</em>.
+              </h2>
+            </div>
+            <p className="max-w-sm text-sm text-muted-foreground">
+              All models feature integrated solar, protected entrances, large windows for
+              natural light, and provision for a 2-car garage.
+            </p>
           </div>
-          <p className="max-w-sm text-sm text-muted-foreground">
-            All models feature integrated solar, protected entrances, large windows for
-            natural light, and provision for a 2-car garage.
-          </p>
-        </div>
+        </ScrollReveal>
 
         <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {UNITS.map((u) => (
-            <UnitCard key={u.name} unit={u} />
+          {UNITS.map((u, idx) => (
+            <ScrollReveal key={u.name} delay={idx * 120}>
+              <UnitCard unit={u} />
+            </ScrollReveal>
           ))}
         </div>
 
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-3 text-center">
-          <Badge variant="outline" className="rounded-full border-leaf/40 bg-card px-4 py-2 text-xs font-medium text-primary">
-            ✓ Pag-IBIG Financing Available
-          </Badge>
-          <Badge variant="outline" className="rounded-full border-leaf/40 bg-card px-4 py-2 text-xs font-medium text-primary">
-            ✓ Bank Financing Available
-          </Badge>
-        </div>
+        <ScrollReveal delay={200}>
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-3 text-center">
+            <Badge variant="outline" className="rounded-full border-leaf/40 bg-card px-4 py-2 text-xs font-medium text-primary">
+              ✓ Pag-IBIG Financing Available
+            </Badge>
+            <Badge variant="outline" className="rounded-full border-leaf/40 bg-card px-4 py-2 text-xs font-medium text-primary">
+              ✓ Bank Financing Available
+            </Badge>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );
@@ -511,56 +523,60 @@ function Location() {
     <section id="location" className="bg-secondary py-20 sm:py-32">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
-          <div>
-            <SectionLabel>Location & Accessibility</SectionLabel>
-            <h2 className="mt-4 text-balance text-4xl leading-[1.1] sm:text-5xl">
-              Everything <em className="italic text-clay">grows</em> in Lipa.
-            </h2>
-            <p className="mt-5 text-base text-muted-foreground">
-              Nestled near the foot of Mt. Malarayat along Lipa-Alaminos Road —
-              Km 89, Brgy. Talisay / Lumbang, Lipa City, Batangas.
-            </p>
-            <ul className="mt-8 space-y-3">
-              {bullets.map((b) => (
-                <li key={b} className="flex items-start gap-3 text-sm sm:text-base">
-                  <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-clay" />
-                  <span>{b}</span>
-                </li>
-              ))}
-            </ul>
-            <a
-              href="https://www.google.com/maps/search/?api=1&query=Vermira+Sales+Pavilion+Lipa-Alaminos+Road+Talisay+Lipa+Batangas"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-8 inline-flex h-11 items-center gap-2 rounded-full border border-primary/30 px-5 text-sm font-medium text-primary transition hover:bg-primary hover:text-primary-foreground"
-            >
-              Open in Google Maps
-              <ArrowRight className="h-4 w-4" />
-            </a>
-          </div>
+          <ScrollReveal>
+            <div>
+              <SectionLabel>Location & Accessibility</SectionLabel>
+              <h2 className="mt-4 text-balance text-4xl leading-[1.1] sm:text-5xl">
+                Everything <em className="italic text-clay">grows</em> in Lipa.
+              </h2>
+              <p className="mt-5 text-base text-muted-foreground">
+                Nestled near the foot of Mt. Malarayat along Lipa-Alaminos Road —
+                Km 89, Brgy. Talisay / Lumbang, Lipa City, Batangas.
+              </p>
+              <ul className="mt-8 space-y-3">
+                {bullets.map((b) => (
+                  <li key={b} className="flex items-start gap-3 text-sm sm:text-base">
+                    <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-clay" />
+                    <span>{b}</span>
+                  </li>
+                ))}
+              </ul>
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Vermira+Sales+Pavilion+Lipa-Alaminos+Road+Talisay+Lipa+Batangas"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-8 inline-flex h-11 items-center gap-2 rounded-full border border-primary/30 px-5 text-sm font-medium text-primary transition hover:bg-primary hover:text-primary-foreground"
+              >
+                Open in Google Maps
+                <ArrowRight className="h-4 w-4" />
+              </a>
+            </div>
+          </ScrollReveal>
 
           {/* Map embed placeholder */}
-          <div className="overflow-hidden rounded-3xl bg-card shadow-sm ring-1 ring-leaf/15">
-            <div className="relative aspect-[4/3]">
-              <img
-                src={locationMapImg}
-                alt="Map showing Vermira location near Mt. Malarayat in Lipa, Batangas"
-                className="absolute inset-0 h-full w-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />
-              <div className="absolute bottom-4 left-4 right-4 rounded-2xl bg-bone/95 p-4 backdrop-blur sm:bottom-6 sm:left-6 sm:right-auto sm:max-w-xs">
-                <div className="text-[11px] uppercase tracking-wider text-clay">
-                  Vermira Sales Pavilion
-                </div>
-                <div className="mt-1 text-sm text-foreground">
-                  Km 89, Lipa-Alaminos Road, Brgy. Talisay, Lipa City, Batangas
+          <ScrollReveal delay={150}>
+            <div className="overflow-hidden rounded-3xl bg-card shadow-sm ring-1 ring-leaf/15">
+              <div className="relative aspect-[4/3]">
+                <img
+                  src={locationMapImg}
+                  alt="Map showing Vermira location near Mt. Malarayat in Lipa, Batangas"
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />
+                <div className="absolute bottom-4 left-4 right-4 rounded-2xl bg-bone/95 p-4 backdrop-blur sm:bottom-6 sm:left-6 sm:right-auto sm:max-w-xs">
+                  <div className="text-[11px] uppercase tracking-wider text-clay">
+                    Vermira Sales Pavilion
+                  </div>
+                  <div className="mt-1 text-sm text-foreground">
+                    Km 89, Lipa-Alaminos Road, Brgy. Talisay, Lipa City, Batangas
+                  </div>
                 </div>
               </div>
+              <div className="px-4 py-3 text-center text-[11px] uppercase tracking-wider text-muted-foreground">
+                [ Map embed placeholder — swap for live Google Maps iframe ]
+              </div>
             </div>
-            <div className="px-4 py-3 text-center text-[11px] uppercase tracking-wider text-muted-foreground">
-              [ Map embed placeholder — swap for live Google Maps iframe ]
-            </div>
-          </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>
@@ -604,35 +620,35 @@ function Gallery() {
   return (
     <section id="gallery" className="bg-bone py-20 sm:py-32">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between animate-fade-up-soft">
-          <div>
-            <SectionLabel>Gallery</SectionLabel>
-            <h2 className="mt-4 text-balance text-4xl leading-[1.1] sm:text-5xl">
-              Lifestyle, <em className="italic text-clay">framed</em>.
-            </h2>
+        <ScrollReveal>
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <SectionLabel>Gallery</SectionLabel>
+              <h2 className="mt-4 text-balance text-4xl leading-[1.1] sm:text-5xl">
+                Lifestyle, <em className="italic text-clay">framed</em>.
+              </h2>
+            </div>
+            <p className="max-w-sm text-sm text-muted-foreground">
+              Interior perspectives and lifestyle-ready spaces from the Vermira home collection.
+            </p>
           </div>
-          <p className="max-w-sm text-sm text-muted-foreground">
-            Interior perspectives and lifestyle-ready spaces from the Vermira home collection.
-          </p>
-        </div>
+        </ScrollReveal>
         <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 sm:gap-6">
           {items.map((item, idx) => (
-            <figure
-              key={item.label}
-              className="group overflow-hidden rounded-2xl bg-muted ring-1 ring-border/60 animate-fade-up-soft"
-              style={{ animationDelay: `${idx * 90}ms` }}
-            >
-              <div className="aspect-[4/3] overflow-hidden">
-                <img
-                  src={item.src}
-                  alt={item.alt}
-                  className="h-full w-full object-cover transition duration-700 group-hover:scale-[1.03]"
-                />
-              </div>
-              <figcaption className="border-t border-border/80 px-4 py-3 text-sm text-muted-foreground">
-                {item.label}
-              </figcaption>
-            </figure>
+            <ScrollReveal key={item.label} delay={idx * 100}>
+              <figure className="group overflow-hidden rounded-2xl bg-muted ring-1 ring-border/60">
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img
+                    src={item.src}
+                    alt={item.alt}
+                    className="h-full w-full object-cover transition duration-700 group-hover:scale-[1.03]"
+                  />
+                </div>
+                <figcaption className="border-t border-border/80 px-4 py-3 text-sm text-muted-foreground">
+                  {item.label}
+                </figcaption>
+              </figure>
+            </ScrollReveal>
           ))}
         </div>
       </div>
@@ -645,24 +661,26 @@ function LeadFormSection() {
   return (
     <section id="inquire" className="relative bg-primary py-20 text-primary-foreground sm:py-32">
       <div className="mx-auto grid max-w-7xl gap-12 px-5 sm:px-8 lg:grid-cols-12 lg:gap-16">
-        <div className="lg:col-span-5">
-          <SectionLabel className="text-moss">Inquire</SectionLabel>
-          <h2 className="mt-4 text-balance text-4xl leading-[1.1] sm:text-5xl">
-            Tara, magpa-tour <em className="italic text-moss">tayo</em>.
-          </h2>
-          <p className="mt-5 text-base leading-relaxed text-bone/80">
-            Tell us what you're looking for and we'll send pricing, current promos,
-            and tour availability — usually within one business day.
-          </p>
-          <div className="mt-8 space-y-3 text-sm text-bone/80">
-            <p className="flex items-center gap-3"><Phone className="h-4 w-4 text-moss" /> +63 927 676 6785</p>
-            <p className="flex items-center gap-3"><Mail className="h-4 w-4 text-moss" /> joycecuenca002@gmail.com</p>
-            <p className="flex items-center gap-3"><MapPin className="h-4 w-4 text-moss" /> Vermira Sales Pavilion, Lipa City</p>
+        <ScrollReveal className="lg:col-span-5">
+          <div>
+            <SectionLabel className="text-moss">Inquire</SectionLabel>
+            <h2 className="mt-4 text-balance text-4xl leading-[1.1] sm:text-5xl">
+              Tara, magpa-tour <em className="italic text-moss">tayo</em>.
+            </h2>
+            <p className="mt-5 text-base leading-relaxed text-bone/80">
+              Tell us what you're looking for and we'll send pricing, current promos,
+              and tour availability — usually within one business day.
+            </p>
+            <div className="mt-8 space-y-3 text-sm text-bone/80">
+              <p className="flex items-center gap-3"><Phone className="h-4 w-4 text-moss" /> +63 927 676 6785</p>
+              <p className="flex items-center gap-3"><Mail className="h-4 w-4 text-moss" /> joycecuenca002@gmail.com</p>
+              <p className="flex items-center gap-3"><MapPin className="h-4 w-4 text-moss" /> Vermira Sales Pavilion, Lipa City</p>
+            </div>
           </div>
-        </div>
-        <div className="lg:col-span-7">
+        </ScrollReveal>
+        <ScrollReveal className="lg:col-span-7" delay={150}>
           <LeadForm unitOptions={UNITS.map((u) => `${u.name} — ${u.type}`)} />
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );

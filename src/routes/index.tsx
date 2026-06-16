@@ -26,6 +26,7 @@ import {
 } from "lucide-react";
 import { LeadForm } from "@/components/landing/LeadForm";
 import { FloatingMessenger } from "@/components/landing/FloatingMessenger";
+import { ScrollReveal } from "@/components/landing/ScrollReveal";
 
 import heroImg from "@/assets/vermira/hero.jpg";
 import heroVideo from "@/assets/vermira/hero.mp4.asset.json";

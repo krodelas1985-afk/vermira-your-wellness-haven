@@ -29,6 +29,7 @@ import { FloatingMessenger } from "@/components/landing/FloatingMessenger";
 import { ScrollReveal } from "@/components/landing/ScrollReveal";
 
 import heroImg from "@/assets/vermira/hero.jpg";
+import heroVideo from "@/assets/vermira/hero.mp4";
 import clubhouseImg from "@/assets/vermira/clubhouse.jpg";
 import locationMapImg from "@/assets/vermira/location-map.png";
 import unitMiraImg from "@/assets/vermira/unit-mira.jpg";
@@ -210,9 +211,13 @@ function Hero() {
   return (
     <section id="top" className="relative min-h-[100svh] w-full overflow-hidden">
       <div className="absolute inset-0">
-        <img
-          src={heroImg}
-          alt="Vermira at the foot of Mt. Malarayat"
+        <video
+          src={heroVideo}
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster={heroImg}
           className="h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-primary/40 via-primary/30 to-primary/80" />

@@ -291,11 +291,11 @@ function Overview() {
             <div className="lg:col-span-7">
               <p className="text-lg leading-relaxed text-muted-foreground">
                 <em className="not-italic font-medium text-foreground">[ver]</em> verdant ·{" "}
-                <em className="not-italic font-medium text-foreground">[mira]</em> to see.
-                Vermira's clustered layout weaves themed pocket parks, botanical gardens, and
-                shared green spaces through every neighborhood — with a commercial center
-                fronting the property and a partnership with the World Wildlife Fund guiding
-                how the community grows.
+                <em className="not-italic font-medium text-foreground">[mira]</em> to see — because
+                what surrounds your home shapes how you live in it. Vermira's clustered layout
+                weaves themed pocket parks, botanical gardens, and shared green spaces through
+                every neighborhood — with a commercial center fronting the property and a
+                partnership with the World Wildlife Fund guiding how the community grows.
               </p>
               <div className="mt-10 grid grid-cols-2 gap-px overflow-hidden rounded-2xl bg-leaf/15 sm:grid-cols-4">
                 {facts.map((f) => (

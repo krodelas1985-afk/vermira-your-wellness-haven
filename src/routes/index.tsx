@@ -30,6 +30,7 @@ import { ScrollReveal } from "@/components/landing/ScrollReveal";
 
 import heroImg from "@/assets/vermira/hero.jpg";
 import heroVideo from "@/assets/vermira/hero.mp4";
+import heroPoster from "@/assets/vermira/hero-poster.jpg";
 import clubhouseImg from "@/assets/vermira/clubhouse.jpg";
 import locationMapImg from "@/assets/vermira/location-map.png";
 import unitMiraImg from "@/assets/vermira/unit-mira.jpg";
@@ -217,7 +218,8 @@ function Hero() {
           muted
           loop
           playsInline
-          poster={heroImg}
+          preload="auto"
+          poster={heroPoster}
           className="h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-primary/40 via-primary/30 to-primary/80" />

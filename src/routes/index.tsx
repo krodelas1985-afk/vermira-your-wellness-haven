@@ -41,6 +41,12 @@ import gallery3 from "@/assets/vermira/gallery-3.jpg";
 import gallery4 from "@/assets/vermira/gallery-4.jpg";
 import gallery5 from "@/assets/vermira/gallery-5.jpg";
 import gallery6 from "@/assets/vermira/gallery-6.jpg";
+import amenityJogging from "@/assets/vermira/amenities/jogging-path.jpg.asset.json";
+import amenityFitness from "@/assets/vermira/amenities/fitness-area.jpg.asset.json";
+import amenityCourt from "@/assets/vermira/amenities/multi-sport-court.jpg.asset.json";
+import amenityPool from "@/assets/vermira/amenities/swimming-pool.jpg.asset.json";
+import amenityClubhouse from "@/assets/vermira/amenities/clubhouse.jpg.asset.json";
+import amenityGate from "@/assets/vermira/amenities/gate-guardhouse.jpg.asset.json";
 import agentJoyce from "@/assets/vermira/agent-joyce.jpg";
 
 export const Route = createFileRoute("/")({

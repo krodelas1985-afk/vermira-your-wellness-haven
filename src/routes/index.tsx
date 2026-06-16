@@ -714,9 +714,10 @@ function AgentSection() {
               </div>
 
               <p className="mt-6 text-base leading-relaxed text-muted-foreground">
-                [ Short bio placeholder — 2-3 sentences about Joyce's background, years in
-                Lipa real estate, and what makes her a trusted guide for first-time Vermira
-                buyers. Replace this with the final copy. ]
+                Joyce is a real estate salesperson based in Lipa City, specializing in guiding
+                first-time buyers through every step — from property selection to Pag-IBIG
+                financing. With deep roots in CALABARZON, she knows this community from the
+                inside out.
               </p>
 
               <div className="mt-8 grid gap-3 sm:grid-cols-2">

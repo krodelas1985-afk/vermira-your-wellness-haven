@@ -12,4 +12,8 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  // Outside the Lovable sandbox (e.g. Vercel CI) the nitro deploy plugin is skipped by
+  // default, producing a client-only build with no server output — every route 404s.
+  // Force it on with the Vercel preset so `vercel build` emits a working server function.
+  nitro: { preset: "vercel" },
 });
